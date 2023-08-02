@@ -34,6 +34,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: decompile dts
         run: |
-          ./split-appended-dtb ./kmini3g.dtb
+          sudo ./split-appended-dtb ./kmini3g.dtb
           dtc -I dtb -O dts -o ./kmini3g.dts ./kmini3g.dtb
           
