@@ -34,7 +34,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: decompile dts
         run: |
-          pip install csplitb
-          python3 csplitb --prefix ./kmini3g.dtb --suffix .dtb --number 4 D00DFEED ./kmini3g-dt.dtb
-          dtc -I dtb -O dts -o ./kmini3g.dts ./kmini3g-dt
+          ./split-appended-dtb ./kmini3g.dtb
+          dtc -I dtb -O dts -o ./kmini3g.dts ./kmini3g.dtb
           
