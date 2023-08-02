@@ -35,6 +35,6 @@ jobs:
       - name: decompile dts
         run: |
           pip install csplitb
-          csplitb --prefix msm8926- --suffix .dtb --number 4 D00DFEED ./kmini3g.dtb
+          csplitb --prefix ./kmini3g.dtb --suffix .dtb --number 4 D00DFEED ./kmini3g.dtb
           dtc -I dtb -O dts -o ./kmini3g.dts ./kmini3g.dtb
           
