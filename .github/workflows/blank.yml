@@ -27,7 +27,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: install dependencies
-        run: sudo apt install device-tree-compiler
+        run: |
+          sudo apt install device-tree-compiler
+          sudo apt update
 
       # Runs a set of commands using the runners shell
       - name: decompile dts
