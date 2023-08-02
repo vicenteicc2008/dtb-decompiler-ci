@@ -36,3 +36,7 @@ jobs:
         run: |
           dtc -I dtb -O dts -o ./kmini3g.dts ./kmini3g.dtb
           
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dts
+          path: ./kmini3g.dts
