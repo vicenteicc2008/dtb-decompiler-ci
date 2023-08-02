@@ -28,11 +28,13 @@ jobs:
       # Runs a single command using the runners shell
       - name: install dependencies
         run: |
-          sudo apt install device-tree-compiler
           sudo apt update
+          sudo apt install device-tree-compiler python3
 
       # Runs a set of commands using the runners shell
       - name: decompile dts
         run: |
+          pip install csplitb
+          csplitb.py --prefix msm8926- --suffix .dtb --number 4 D00DFEED ./kmini3g.dtb
           dtc -I dtb -O dts -o ./kmini3g.dts ./kmini3g.dtb
           
