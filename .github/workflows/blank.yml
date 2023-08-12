@@ -35,8 +35,12 @@ jobs:
       - name: decompile dts
         run: |
           dtc -I dtb -O dts -o ./kmini3g.dts ./kmini3g.dtb
-          
+          dtc -I dts -O dtb -o ./kmini3g-lk2nd.dtb ./kmini3g.dts
       - uses: actions/upload-artifact@v3
         with:
           name: dts
           path: ./kmini3g.dts
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dtb
+          path: ./kmini3g-lk2nd.dtb
